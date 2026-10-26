@@ -127,7 +127,7 @@ function HeroConstellation() {
       </defs>
       <ellipse cx="280" cy="95" rx="260" ry="90" fill="url(#heroGlow)" />
       {/* connector lines */}
-      {[
+      {([
         [280, 95, 90, 40],
         [280, 95, 200, 25],
         [280, 95, 360, 25],
@@ -136,7 +136,7 @@ function HeroConstellation() {
         [280, 95, 185, 165],
         [280, 95, 375, 165],
         [280, 95, 500, 145],
-      ].map(([x1, y1, x2, y2], i) => (
+      ] as [number, number, number, number][]).map(([x1, y1, x2, y2], i) => (
         <line
           key={i}
           x1={x1}
@@ -256,12 +256,12 @@ function FragmentedDiagram() {
       role="img"
       aria-label="Scattered, disconnected service nodes with broken links"
     >
-      {[
+      {([
         [70, 55, 190, 80],
         [190, 80, 110, 150],
         [240, 45, 200, 145],
         [110, 150, 250, 160],
-      ].map(([x1, y1, x2, y2], i) => (
+      ] as [number, number, number, number][]).map(([x1, y1, x2, y2], i) => (
         <line
           key={i}
           x1={x1}
@@ -274,12 +274,12 @@ function FragmentedDiagram() {
         />
       ))}
       {/* broken-link markers */}
-      {[
+      {([
         [130, 68],
         [150, 115],
         [220, 95],
         [180, 155],
-      ].map(([x, y], i) => (
+      ] as [number, number][]).map(([x, y], i) => (
         <g key={i} stroke="var(--color-destructive)" strokeWidth="1.5" opacity="0.7">
           <line x1={x - 5} y1={y - 5} x2={x + 5} y2={y + 5} />
           <line x1={x + 5} y1={y - 5} x2={x - 5} y2={y + 5} />
@@ -312,14 +312,14 @@ function ConnectedDiagram() {
       role="img"
       aria-label="All service nodes connected through one central business hub"
     >
-      {[
+      {([
         [160, 105, 50, 45],
         [160, 105, 160, 35],
         [160, 105, 270, 45],
         [160, 105, 45, 160],
         [160, 105, 160, 175],
         [160, 105, 275, 160],
-      ].map(([x1, y1, x2, y2], i) => (
+      ] as [number, number, number, number][]).map(([x1, y1, x2, y2], i) => (
         <line
           key={i}
           x1={x1}
