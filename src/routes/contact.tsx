@@ -275,7 +275,7 @@ function ContactPage() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} noValidate className="space-y-9">
+              <form id="enquiry-form" onSubmit={handleSubmit} noValidate className="space-y-9 scroll-mt-24">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="text-sm font-semibold text-foreground">
@@ -418,7 +418,7 @@ function ContactPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                  className="btn-primary inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
                 >
                   {submitting ? (
                     <>

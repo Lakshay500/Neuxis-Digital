@@ -67,7 +67,17 @@ export function Navbar() {
           ))}
           <Link
             to="/contact"
-            className="ml-3 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 focus-visible:outline-2 focus-visible:outline-ring"
+            className="btn-primary ml-3 inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
+            onClick={(event) => {
+              // Already on the contact page: scroll to the form instead of a silent no-op.
+              if (location.pathname === "/contact") {
+                event.preventDefault();
+                document
+                  .getElementById("enquiry-form")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+              setOpen(false);
+            }}
           >
             Discuss a Project
           </Link>
@@ -110,7 +120,7 @@ export function Navbar() {
           ))}
           <Link
             to="/contact"
-            className="mt-2 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
+            className="btn-primary mt-2 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
             onClick={() => setOpen(false)}
           >
             Discuss a Project
