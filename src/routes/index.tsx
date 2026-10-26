@@ -27,6 +27,19 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Neuxis Digital",
+          slogan: "Build the presence. Create the system. Move the business forward.",
+          description:
+            "Technology-driven digital growth company connecting strategy, creative, technology, marketing, AI automation and analytics.",
+        }),
+      },
+    ],
   }),
   component: Index,
 });
@@ -175,8 +188,8 @@ function HeroConstellation() {
         </g>
       ))}
       {/* hub */}
+      <circle cx="280" cy="95" r="41" fill="none" stroke="var(--color-accent)" strokeOpacity="0.35" strokeWidth="1" className="ring-pulse" />
       <circle cx="280" cy="95" r="34" fill="var(--color-surface-raised)" stroke="var(--color-accent)" strokeOpacity="0.5" strokeWidth="1.5" />
-      <circle cx="280" cy="95" r="4" fill="var(--color-accent)" className="node-pulse" />
       <text x="280" y="91" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="10" fontWeight="600" fontFamily="var(--font-sans)">
         Your
       </text>
@@ -348,8 +361,8 @@ function ConnectedDiagram() {
           </text>
         </g>
       ))}
+      <circle cx="160" cy="105" r="31" fill="none" stroke="var(--color-accent)" strokeOpacity="0.35" strokeWidth="1" className="ring-pulse" />
       <circle cx="160" cy="105" r="26" fill="var(--color-surface-raised)" stroke="var(--color-accent)" strokeOpacity="0.7" strokeWidth="1.5" />
-      <circle cx="160" cy="105" r="3.5" fill="var(--color-accent)" className="node-pulse" />
       <text x="160" y="102" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="9" fontWeight="600" fontFamily="var(--font-sans)">
         Your
       </text>
@@ -598,7 +611,7 @@ function ClosingCta() {
 
 function Index() {
   return (
-    <main>
+    <main className="page-enter">
       <Hero />
       <VisualModel />
       <Capabilities />

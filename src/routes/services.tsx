@@ -36,7 +36,7 @@ function PageHeader() {
   return (
     <section className="relative overflow-hidden border-b border-border">
       <div className="tech-grid tech-grid-fade absolute inset-0" aria-hidden="true" />
-      <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+      <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
         <Reveal className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
             Services
@@ -64,7 +64,7 @@ function TierNavigation({
 }) {
   return (
     <div
-      className="mt-14 flex flex-col gap-4"
+      className="mt-10 flex flex-col gap-4"
       role="tablist"
       aria-label="Capability tiers"
     >
