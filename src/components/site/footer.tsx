@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Wordmark } from "./navbar";
+import neuxisLogo from "@/assets/neuxis-logo.png";
 
 const QUICK_LINKS = [
   { to: "/", label: "Home" },
@@ -24,7 +24,11 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Wordmark />
+            <img
+              src={neuxisLogo}
+              alt="Neuxis Digital — A Photon Helper Company"
+              className="h-28 w-auto"
+            />
             <p className="mt-4 font-display text-sm font-medium text-foreground">
               Build the presence. Create the system. Move the business forward.
             </p>

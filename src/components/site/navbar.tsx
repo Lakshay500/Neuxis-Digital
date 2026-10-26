@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import neuxisEmblem from "@/assets/neuxis-emblem.png";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
@@ -14,12 +15,19 @@ export function Wordmark({ className }: { className?: string }) {
   return (
     <Link
       to="/"
-      className={cn("group inline-flex items-baseline gap-1.5 font-display text-lg font-bold tracking-[0.18em]", className)}
+      className={cn("group inline-flex items-center gap-2.5", className)}
       aria-label="Neuxis Digital — home"
     >
-      <span className="text-foreground">NEUXIS</span>
-      <span className="text-sm font-medium tracking-[0.18em] text-muted-foreground transition-colors group-hover:text-accent">
-        DIGITAL
+      <img
+        src={neuxisEmblem}
+        alt=""
+        className="h-9 w-9 object-contain transition-transform duration-300 group-hover:scale-105"
+      />
+      <span className="inline-flex items-baseline gap-1.5 font-display text-lg font-bold tracking-[0.18em]">
+        <span className="text-foreground">NEUXIS</span>
+        <span className="text-sm font-medium tracking-[0.18em] text-muted-foreground transition-colors group-hover:text-accent">
+          DIGITAL
+        </span>
       </span>
       <span className="h-1.5 w-1.5 translate-y-[-1px] rounded-full bg-accent" aria-hidden="true" />
     </Link>

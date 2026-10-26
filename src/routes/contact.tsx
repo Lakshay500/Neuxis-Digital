@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
+import neuxisEmblem from "@/assets/neuxis-emblem.png";
 import { Reveal } from "@/components/site/reveal";
 import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
@@ -263,9 +264,11 @@ function ContactPage() {
           <Reveal>
             {submitted ? (
               <div className="flex h-full min-h-[420px] flex-col items-center justify-center rounded-xl border border-accent/40 bg-card p-8 text-center">
-                <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-accent/40 bg-accent/10">
-                  <CheckCircle2 className="h-7 w-7 text-accent" aria-hidden="true" />
-                </span>
+                <img
+                  src={neuxisEmblem}
+                  alt=""
+                  className="h-20 w-20 object-contain"
+                />
                 <h2 className="mt-6 font-display text-2xl font-bold text-foreground">
                   Enquiry received.
                 </h2>
