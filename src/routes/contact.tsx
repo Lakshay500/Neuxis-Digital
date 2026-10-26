@@ -88,7 +88,7 @@ function PageHeader() {
   return (
     <section className="relative overflow-hidden border-b border-border">
       <div className="tech-grid tech-grid-fade absolute inset-0" aria-hidden="true" />
-      <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+      <div className="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
         <Reveal className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
             Contact
@@ -119,8 +119,8 @@ function ChipGroup({
   options: readonly string[];
   selected: string[];
   onToggle: (option: string) => void;
-  multiSelect?: boolean;
-  error?: string;
+  multiSelect?: boolean | undefined;
+  error?: string | undefined;
 }) {
   return (
     <fieldset>
@@ -163,7 +163,7 @@ const inputClasses =
 
 function WhatHappensNext() {
   return (
-    <aside className="rounded-xl border border-border bg-card p-6 sm:p-8">
+    <aside className="h-fit rounded-xl border border-border bg-card p-6 sm:p-8 lg:sticky lg:top-24">
       <h2 className="font-display text-lg font-semibold text-foreground">
         What happens next
       </h2>
@@ -255,11 +255,11 @@ function ContactPage() {
   }
 
   return (
-    <main>
+    <main className="page-enter">
       <div className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
         <PageHeader />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.5fr_1fr]">
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1.5fr_1fr]">
           <Reveal>
             {submitted ? (
               <div className="flex h-full min-h-[420px] flex-col items-center justify-center rounded-xl border border-accent/40 bg-card p-8 text-center">
