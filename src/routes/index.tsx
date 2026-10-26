@@ -101,14 +101,14 @@ function Hero() {
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               to="/contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 sm:w-auto"
+              className="btn-primary inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground sm:w-auto"
             >
               Discuss a Project
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
             </Link>
             <Link
               to="/services"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent/50 hover:text-accent sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-accent/50 hover:text-accent active:scale-[0.98] sm:w-auto"
             >
               Explore Our Services
             </Link>
@@ -172,30 +172,34 @@ function HeroConstellation() {
         { x: 185, y: 165, label: "AI" },
         { x: 375, y: 165, label: "Automation" },
         { x: 500, y: 145, label: "Analytics" },
-      ].map((n) => (
-        <g key={n.label}>
-          <circle cx={n.x} cy={n.y} r="5" fill="var(--color-card)" stroke="var(--color-border)" strokeWidth="1.5" />
-          <text
-            x={n.x}
-            y={n.y - 12}
-            textAnchor="middle"
-            className="fill-[var(--color-muted-foreground)]"
-            fontSize="10"
-            fontFamily="var(--font-sans)"
-          >
-            {n.label}
-          </text>
+      ].map((n, i) => (
+        <g key={n.label} className="float-soft" style={{ animationDelay: `${i * 0.55}s` }}>
+          <g className="node-pop" style={{ animationDelay: `${0.45 + i * 0.09}s` }}>
+            <circle cx={n.x} cy={n.y} r="5" fill="var(--color-card)" stroke="var(--color-border)" strokeWidth="1.5" />
+            <text
+              x={n.x}
+              y={n.y - 12}
+              textAnchor="middle"
+              className="fill-[var(--color-muted-foreground)]"
+              fontSize="10"
+              fontFamily="var(--font-sans)"
+            >
+              {n.label}
+            </text>
+          </g>
         </g>
       ))}
       {/* hub */}
-      <circle cx="280" cy="95" r="41" fill="none" stroke="var(--color-accent)" strokeOpacity="0.35" strokeWidth="1" className="ring-pulse" />
-      <circle cx="280" cy="95" r="34" fill="var(--color-surface-raised)" stroke="var(--color-accent)" strokeOpacity="0.5" strokeWidth="1.5" />
-      <text x="280" y="91" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="10" fontWeight="600" fontFamily="var(--font-sans)">
-        Your
-      </text>
-      <text x="280" y="104" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="10" fontWeight="600" fontFamily="var(--font-sans)">
-        Business
-      </text>
+      <g className="node-pop" style={{ animationDelay: "0.25s" }}>
+        <circle cx="280" cy="95" r="41" fill="none" stroke="var(--color-accent)" strokeOpacity="0.35" strokeWidth="1" className="ring-pulse" />
+        <circle cx="280" cy="95" r="34" fill="var(--color-surface-raised)" stroke="var(--color-accent)" strokeOpacity="0.5" strokeWidth="1.5" />
+        <text x="280" y="91" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="10" fontWeight="600" fontFamily="var(--font-sans)">
+          Your
+        </text>
+        <text x="280" y="104" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="10" fontWeight="600" fontFamily="var(--font-sans)">
+          Business
+        </text>
+      </g>
     </svg>
   );
 }
@@ -353,22 +357,26 @@ function ConnectedDiagram() {
         { x: 45, y: 160, label: "Marketing" },
         { x: 160, y: 175, label: "Automation" },
         { x: 275, y: 160, label: "Analytics" },
-      ].map((n) => (
-        <g key={n.label}>
-          <circle cx={n.x} cy={n.y} r="6" fill="var(--color-surface-raised)" stroke="var(--color-accent)" strokeOpacity="0.6" strokeWidth="1.5" />
-          <text x={n.x} y={n.y - 11} textAnchor="middle" className="fill-[var(--color-muted-foreground)]" fontSize="9" fontFamily="var(--font-sans)">
-            {n.label}
-          </text>
+      ].map((n, i) => (
+        <g key={n.label} className="float-soft" style={{ animationDelay: `${i * 0.5}s` }}>
+          <g className="node-pop" style={{ animationDelay: `${0.7 + i * 0.09}s` }}>
+            <circle cx={n.x} cy={n.y} r="6" fill="var(--color-surface-raised)" stroke="var(--color-accent)" strokeOpacity="0.6" strokeWidth="1.5" />
+            <text x={n.x} y={n.y - 11} textAnchor="middle" className="fill-[var(--color-muted-foreground)]" fontSize="9" fontFamily="var(--font-sans)">
+              {n.label}
+            </text>
+          </g>
         </g>
       ))}
-      <circle cx="160" cy="105" r="31" fill="none" stroke="var(--color-accent)" strokeOpacity="0.35" strokeWidth="1" className="ring-pulse" />
-      <circle cx="160" cy="105" r="26" fill="var(--color-surface-raised)" stroke="var(--color-accent)" strokeOpacity="0.7" strokeWidth="1.5" />
-      <text x="160" y="102" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="9" fontWeight="600" fontFamily="var(--font-sans)">
-        Your
-      </text>
-      <text x="160" y="113" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="9" fontWeight="600" fontFamily="var(--font-sans)">
-        Business
-      </text>
+      <g className="node-pop" style={{ animationDelay: "0.5s" }}>
+        <circle cx="160" cy="105" r="31" fill="none" stroke="var(--color-accent)" strokeOpacity="0.35" strokeWidth="1" className="ring-pulse" />
+        <circle cx="160" cy="105" r="26" fill="var(--color-surface-raised)" stroke="var(--color-accent)" strokeOpacity="0.7" strokeWidth="1.5" />
+        <text x="160" y="102" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="9" fontWeight="600" fontFamily="var(--font-sans)">
+          Your
+        </text>
+        <text x="160" y="113" textAnchor="middle" className="fill-[var(--color-foreground)]" fontSize="9" fontWeight="600" fontFamily="var(--font-sans)">
+          Business
+        </text>
+      </g>
     </svg>
   );
 }
@@ -597,7 +605,7 @@ function ClosingCta() {
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"
+              className="btn-primary mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground"
             >
               Start a Conversation
               <ArrowRight className="h-4 w-4" aria-hidden="true" />

@@ -228,7 +228,7 @@ function ServicesCta() {
           </p>
           <Link
             to="/contact"
-            className="mt-7 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"
+            className="btn-primary mt-7 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
           >
             Discuss a Project
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
