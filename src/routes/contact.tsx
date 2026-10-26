@@ -255,7 +255,7 @@ function ContactPage() {
   }
 
   return (
-    <main>
+    <main className="page-enter">
       <div className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
         <PageHeader />
 
