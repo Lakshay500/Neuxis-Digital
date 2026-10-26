@@ -119,8 +119,8 @@ function ChipGroup({
   options: readonly string[];
   selected: string[];
   onToggle: (option: string) => void;
-  multiSelect?: boolean;
-  error?: string;
+  multiSelect?: boolean | undefined;
+  error?: string | undefined;
 }) {
   return (
     <fieldset>
