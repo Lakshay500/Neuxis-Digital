@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
+import neuxisEmblem from "@/assets/neuxis-emblem.png";
 import { Reveal } from "@/components/site/reveal";
 import { supabase } from "@/integrations/supabase/client";
 import { cn } from "@/lib/utils";
