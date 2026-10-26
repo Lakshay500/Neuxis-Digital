@@ -54,7 +54,15 @@ export function Navbar() {
               )}
               aria-current={isActive(link.to) ? "page" : undefined}
             >
-              {link.label}
+              <span className="relative">
+                {link.label}
+                {isActive(link.to) && (
+                  <span
+                    className="absolute -bottom-0.5 left-1/2 h-0.5 w-5 -translate-x-1/2 rounded-full bg-accent"
+                    aria-hidden="true"
+                  />
+                )}
+              </span>
             </Link>
           ))}
           <Link
