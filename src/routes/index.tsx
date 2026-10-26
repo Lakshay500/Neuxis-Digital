@@ -150,17 +150,18 @@ function HeroConstellation() {
         [280, 95, 375, 165],
         [280, 95, 500, 145],
       ] as [number, number, number, number][]).map(([x1, y1, x2, y2], i) => (
-        <line
-          key={i}
-          x1={x1}
-          y1={y1}
-          x2={x2}
-          y2={y2}
-          stroke="var(--color-border)"
-          strokeWidth="1.5"
-          className="link-flow"
-          style={{ animationDelay: `${i * 0.3}s` }}
-        />
+        <g key={i} className="line-appear" style={{ animationDelay: `${i * 0.12}s` }}>
+          <line
+            x1={x1}
+            y1={y1}
+            x2={x2}
+            y2={y2}
+            stroke="var(--color-border)"
+            strokeWidth="1.5"
+            className="link-flow"
+            style={{ animationDelay: `${i * 0.3}s` }}
+          />
+        </g>
       ))}
       {/* satellites */}
       {[
@@ -297,7 +298,7 @@ function FragmentedDiagram() {
         [220, 95],
         [180, 155],
       ] as [number, number][]).map(([x, y], i) => (
-        <g key={i} stroke="var(--color-destructive)" strokeWidth="1.5" opacity="0.7">
+        <g key={i} stroke="var(--color-destructive)" strokeWidth="1.5" className="marker-flicker" style={{ animationDelay: `${i * 0.8}s` }}>
           <line x1={x - 5} y1={y - 5} x2={x + 5} y2={y + 5} />
           <line x1={x + 5} y1={y - 5} x2={x - 5} y2={y + 5} />
         </g>
@@ -337,18 +338,19 @@ function ConnectedDiagram() {
         [160, 105, 160, 175],
         [160, 105, 275, 160],
       ] as [number, number, number, number][]).map(([x1, y1, x2, y2], i) => (
-        <line
-          key={i}
-          x1={x1}
-          y1={y1}
-          x2={x2}
-          y2={y2}
-          stroke="var(--color-accent)"
-          strokeOpacity="0.45"
-          strokeWidth="1.5"
-          className="link-flow"
-          style={{ animationDelay: `${i * 0.25}s` }}
-        />
+        <g key={i} className="line-appear" style={{ animationDelay: `${0.3 + i * 0.1}s` }}>
+          <line
+            x1={x1}
+            y1={y1}
+            x2={x2}
+            y2={y2}
+            stroke="var(--color-accent)"
+            strokeOpacity="0.45"
+            strokeWidth="1.5"
+            className="link-flow"
+            style={{ animationDelay: `${i * 0.25}s` }}
+          />
+        </g>
       ))}
       {[
         { x: 50, y: 45, label: "Brand" },
